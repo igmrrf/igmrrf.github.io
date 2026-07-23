@@ -1,5 +1,39 @@
 "use client";
 
+function getHue(hex: string) {
+  let r = 0, g = 0, b = 0;
+  if (hex.length === 4) {
+    r = parseInt(hex[1] + hex[1], 16);
+    g = parseInt(hex[2] + hex[2], 16);
+    b = parseInt(hex[3] + hex[3], 16);
+  } else if (hex.length === 7) {
+    r = parseInt(hex.substring(1, 3), 16);
+    g = parseInt(hex.substring(3, 5), 16);
+    b = parseInt(hex.substring(5, 7), 16);
+  }
+  r /= 255; g /= 255; b /= 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b);
+  let h = 0;
+  if (max === min) return -1;
+  if (max === r) h = (g - b) / (max - min) + (g < b ? 6 : 0);
+  else if (max === g) h = (b - r) / (max - min) + 2;
+  else h = (r - g) / (max - min) + 4;
+  return Math.round(h * 60);
+}
+
+function getColorBucket(hex: string): string {
+  if (!hex || !hex.startsWith('#')) return "Mono";
+  const h = getHue(hex);
+  if (h === -1) return "Mono";
+  if (h < 15 || h >= 330) return "Red";
+  if (h >= 15 && h < 50) return "Orange";
+  if (h >= 50 && h < 70) return "Yellow";
+  if (h >= 70 && h < 160) return "Green";
+  if (h >= 160 && h < 260) return "Blue";
+  if (h >= 260 && h < 330) return "Purple";
+  return "Mono";
+}
+
 import { useState, useMemo, useTransition, useEffect, useRef } from "react";
 import { flushSync } from "react-dom";
 import Image from "next/image";
@@ -26,6 +60,8 @@ export default function IconGallery() {
   const [isZipping, setIsZipping] = useState(false);
   const [visibleCount, setVisibleCount] = useState(24);
   const [manualOrder, setManualOrder] = useState<string[]>([]);
+  const [sortOrder, setSortOrder] = useState<"default" | "asc" | "desc">("default");
+  const [colorFilter, setColorFilter] = useState<string | null>(null);
   
   const observerRef = useRef<IntersectionObserver | null>(null);
   const sentinelRef = useRef<HTMLDivElement>(null);
@@ -38,9 +74,14 @@ export default function IconGallery() {
 
   const filteredCoins = useMemo(() => {
     let list = coins;
+    
+    if (colorFilter) {
+      list = list.filter(c => getColorBucket(c.color) === colorFilter);
+    }
+
     if (search.trim()) {
       const lowerSearch = search.toLowerCase();
-      list = coins.filter(
+      list = list.filter(
         (c) =>
           c.symbol.toLowerCase().includes(lowerSearch) ||
           c.name.toLowerCase().includes(lowerSearch)
@@ -49,6 +90,11 @@ export default function IconGallery() {
     
     if (shuffleSeed > 0) {
       list = [...list].sort(() => Math.random() - 0.5);
+    } else if (sortOrder !== "default") {
+      list = [...list].sort((a, b) => {
+        if (sortOrder === "asc") return a.symbol.localeCompare(b.symbol);
+        return b.symbol.localeCompare(a.symbol);
+      });
     }
     
     if (manualOrder.length > 0) {
@@ -61,7 +107,7 @@ export default function IconGallery() {
     }
     
     return list;
-  }, [search, coins, shuffleSeed, manualOrder]);
+  }, [search, coins, shuffleSeed, manualOrder, colorFilter, sortOrder]);
 
   // Native LocalStorage API
   useEffect(() => {
@@ -106,6 +152,23 @@ export default function IconGallery() {
     }
   };
 
+  const handleSortChange = (order: "default" | "asc" | "desc") => {
+    executeWithTransition(() => {
+      setSortOrder(order);
+      setShuffleSeed(0);
+      setManualOrder([]);
+      setVisibleCount(24);
+    });
+  };
+
+  const handleColorFilter = (color: string | null) => {
+    executeWithTransition(() => {
+      setColorFilter(color);
+      setVisibleCount(24);
+      setManualOrder([]);
+    });
+  };
+
   const handleVariantChange = (v: Variant) => {
     executeWithTransition(() => {
       setVariant(v);
@@ -123,7 +186,7 @@ export default function IconGallery() {
   };
 
   const handleDragStart = (e: React.DragEvent<HTMLButtonElement>, coin: Coin) => {
-    const url = `https://cdn.jsdelivr.net/gh/igmrrf/ikons@main/public/cryptocurrency/svg/${variant}/${coin.symbol.toLowerCase()}.svg`;
+    const url = `https://cdn.jsdelivr.net/gh/igmrrf/icons@main/public/cryptocurrency/svg/${variant}/${coin.symbol.toLowerCase()}.svg`;
     e.dataTransfer.setData("text/plain", url);
     e.dataTransfer.setData("text/uri-list", url);
     e.dataTransfer.setData("text/x-coin-symbol", coin.symbol);
@@ -157,7 +220,7 @@ export default function IconGallery() {
   };
 
   const handleCopyUrl = (coinSymbol: string) => {
-    const url = `https://cdn.jsdelivr.net/gh/igmrrf/native-icons@main/public/cryptocurrency/svg/${variant}/${coinSymbol.toLowerCase()}.svg`;
+    const url = `https://cdn.jsdelivr.net/gh/igmrrf/icons@main/public/cryptocurrency/svg/${variant}/${coinSymbol.toLowerCase()}.svg`;
     navigator.clipboard.writeText(url).then(() => {
       setCopiedId(coinSymbol);
       setTimeout(() => setCopiedId(null), 2000);
@@ -165,7 +228,7 @@ export default function IconGallery() {
   };
 
   const handleShare = async (coin: Coin) => {
-    const url = `https://cdn.jsdelivr.net/gh/igmrrf/native-icons@main/public/cryptocurrency/svg/${variant}/${coin.symbol.toLowerCase()}.svg`;
+    const url = `https://cdn.jsdelivr.net/gh/igmrrf/icons@main/public/cryptocurrency/svg/${variant}/${coin.symbol.toLowerCase()}.svg`;
     if (navigator.share) {
       try {
         await navigator.share({
@@ -189,16 +252,16 @@ export default function IconGallery() {
       
       const iconData = filteredCoins.map(coin => ({
         symbol: coin.symbol,
-        url: `https://cdn.jsdelivr.net/gh/igmrrf/native-icons@main/public/cryptocurrency/svg/${variant}/${coin.symbol.toLowerCase()}.svg`
+        url: `https://cdn.jsdelivr.net/gh/igmrrf/icons@main/public/cryptocurrency/svg/${variant}/${coin.symbol.toLowerCase()}.svg`
       }));
       
       const blob = await api.generateZip(iconData);
       
       const downloadUrl = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = downloadUrl;
-      a.download = `devicons-${variant}.zip`;
-      a.click();
+      const link = document.createElement('a');
+      link.href = downloadUrl;
+      link.download = `devicons-${variant}.zip`;
+      link.click();
       URL.revokeObjectURL(downloadUrl);
       worker.terminate();
     } catch (e) {
@@ -247,33 +310,114 @@ export default function IconGallery() {
           </button>
         </div>
 
-        <div className="flex flex-col sm:flex-row flex-wrap gap-4 items-center w-full lg:w-auto">
+        <div className="flex flex-row gap-3 items-center w-full lg:w-auto mt-4 lg:mt-0">
           <button
             onClick={handleDownloadAll}
             disabled={isZipping}
-            className={`w-full sm:w-auto px-4 py-2 font-mono text-xs uppercase tracking-widest rounded-md transition-all border ${
+            className={`flex-1 lg:flex-none flex items-center justify-center gap-2 px-4 py-3 font-mono text-[10px] sm:text-xs uppercase tracking-widest rounded-md transition-all border ${
               isZipping 
                 ? 'bg-purple-500/5 text-purple-500/50 border-purple-500/20 cursor-wait' 
                 : 'bg-purple-500/10 text-purple-400 border-purple-500/50 hover:bg-purple-500/20'
             }`}
           >
-            {isZipping ? 'Zipping...' : 'Download All'}
+            {isZipping ? (
+              <svg className="animate-spin h-4 w-4 text-purple-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+            )}
+            <span>{isZipping ? 'Zipping' : 'Download'}</span>
           </button>
 
-          <div className="flex flex-wrap justify-center bg-black/50 border border-white/20 rounded-lg p-1 w-full sm:w-auto">
-            {(["color", "white", "black", "icon"] as Variant[]).map((v) => (
-              <button
-                key={v}
-                onClick={() => handleVariantChange(v)}
-                className={`flex-1 sm:flex-none px-4 py-2 font-mono text-xs uppercase tracking-widest rounded-md transition-colors ${
-                  variant === v
-                    ? "bg-neon-cyan/20 text-neon-cyan border border-neon-cyan/50 shadow-[0_0_10px_rgba(0,240,255,0.2)]"
-                    : "text-gray-400 hover:text-white hover:bg-white/5"
-                }`}
-              >
-                {v}
-              </button>
-            ))}
+          <button
+            popoverTarget="filter-popover"
+            className="flex-1 lg:flex-none flex items-center justify-center gap-2 px-4 py-3 font-mono text-[10px] sm:text-xs uppercase tracking-widest rounded-md transition-all bg-black/50 text-gray-300 border border-white/20 hover:border-neon-cyan/50 hover:text-neon-cyan hover:bg-neon-cyan/10 hover:shadow-[0_0_15px_rgba(0,240,255,0.15)]"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
+            <span>Filter</span>
+            {(sortOrder !== "default" || colorFilter) && (
+              <span className="w-2 h-2 rounded-full bg-neon-cyan ml-1 shadow-[0_0_8px_rgba(0,240,255,0.8)]"></span>
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Filter Popover */}
+      <div 
+        popover="auto" 
+        id="filter-popover"
+        className="bg-black/90 backdrop-blur-2xl border border-neon-cyan/50 p-6 rounded-2xl shadow-[0_0_30px_rgba(0,240,255,0.15)] text-white mt-20 inset-x-0 mx-auto w-[90vw] max-w-sm sm:mt-4 sm:ml-auto sm:mr-4 sm:top-20"
+      >
+        <div className="flex flex-col gap-6">
+          <div className="flex items-center justify-between border-b border-white/10 pb-4">
+            <h3 className="font-mono text-neon-cyan uppercase tracking-widest text-sm">Filter & Sort</h3>
+            <button popoverTarget="filter-popover" popoverTargetAction="hide" className="text-gray-400 hover:text-white transition-colors">✕</button>
+          </div>
+
+          <div>
+            <p className="font-mono text-xs text-gray-500 uppercase mb-3">Asset Variant</p>
+            <div className="grid grid-cols-2 gap-2">
+              {(["color", "white", "black", "icon"] as Variant[]).map((v) => (
+                <button
+                  key={v}
+                  onClick={() => handleVariantChange(v)}
+                  className={`px-3 py-2 font-mono text-[10px] uppercase tracking-widest rounded-md transition-colors ${
+                    variant === v
+                      ? "bg-neon-cyan/20 text-neon-cyan border border-neon-cyan/50 shadow-[0_0_10px_rgba(0,240,255,0.2)]"
+                      : "text-gray-400 hover:text-white hover:bg-white/5 border border-transparent"
+                  }`}
+                >
+                  {v}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="font-mono text-xs text-gray-500 uppercase mb-3">Sort Alphabetical</p>
+            <div className="grid grid-cols-3 gap-2">
+              <button 
+                onClick={() => handleSortChange("default")}
+                className={`px-3 py-2 font-mono text-[10px] uppercase rounded-md transition-colors ${sortOrder === "default" ? "bg-white/20 text-white" : "bg-white/5 text-gray-400 hover:bg-white/10"}`}
+              >Default</button>
+              <button 
+                onClick={() => handleSortChange("asc")}
+                className={`px-3 py-2 font-mono text-[10px] uppercase rounded-md transition-colors ${sortOrder === "asc" ? "bg-white/20 text-white" : "bg-white/5 text-gray-400 hover:bg-white/10"}`}
+              >A-Z</button>
+              <button 
+                onClick={() => handleSortChange("desc")}
+                className={`px-3 py-2 font-mono text-[10px] uppercase rounded-md transition-colors ${sortOrder === "desc" ? "bg-white/20 text-white" : "bg-white/5 text-gray-400 hover:bg-white/10"}`}
+              >Z-A</button>
+            </div>
+          </div>
+
+          <div>
+            <p className="font-mono text-xs text-gray-500 uppercase mb-3 flex items-center justify-between">
+              Brand Color
+              {colorFilter && (
+                <button onClick={() => handleColorFilter(null)} className="text-[10px] text-neon-cyan hover:text-white">Clear</button>
+              )}
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {[
+                { name: "Red", bg: "bg-red-500" },
+                { name: "Orange", bg: "bg-orange-500" },
+                { name: "Yellow", bg: "bg-yellow-400" },
+                { name: "Green", bg: "bg-green-500" },
+                { name: "Blue", bg: "bg-blue-500" },
+                { name: "Purple", bg: "bg-purple-500" },
+                { name: "Mono", bg: "bg-gray-400" },
+              ].map(c => (
+                <button
+                  key={c.name}
+                  onClick={() => handleColorFilter(c.name)}
+                  title={c.name}
+                  className={`w-8 h-8 rounded-full border-2 transition-transform hover:scale-110 ${c.bg} ${colorFilter === c.name ? "border-white scale-110 shadow-[0_0_10px_rgba(255,255,255,0.5)]" : "border-transparent"}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -404,6 +548,12 @@ export default function IconGallery() {
       {filteredCoins.length === 0 && (
         <div className="text-center py-20 font-mono text-neon-cyan border border-neon-cyan/20 glass-panel rounded-xl w-full">
           No icons found matching "{search}"
+        </div>
+      )}
+
+      {visibleCount >= filteredCoins.length && filteredCoins.length > 0 && (
+        <div className="text-center py-12 font-mono text-xs text-gray-500 uppercase tracking-widest w-full">
+          End of results ({filteredCoins.length} items)
         </div>
       )}
     </div>
