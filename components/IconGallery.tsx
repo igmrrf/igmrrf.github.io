@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useMemo, useTransition } from "react";
+import { useState, useMemo, useTransition, useEffect, useRef } from "react";
 import { flushSync } from "react-dom";
 import Image from "next/image";
 import * as Comlink from "comlink";
+import { uniqBy } from "lodash";
 import type { ZipApi } from "../lib/zip-worker";
 import manifest from "../public/cryptocurrency/manifest.json";
 
@@ -23,11 +24,17 @@ export default function IconGallery() {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [shuffleSeed, setShuffleSeed] = useState(0);
   const [isZipping, setIsZipping] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(24);
+  const [manualOrder, setManualOrder] = useState<string[]>([]);
   
-  // Keep track of grid slot IDs so they move physically during shuffle
-  const [slotMap, setSlotMap] = useState<number[]>(Array.from({length: 100}, (_, i) => i));
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  const sentinelRef = useRef<HTMLDivElement>(null);
 
-  const coins: Coin[] = manifest;
+  // Keep track of grid slot IDs so they move physically during shuffle
+  // Initialized to 1000 to comfortably cover the 400+ coins without bounds errors
+  const [slotMap, setSlotMap] = useState<number[]>(Array.from({length: 1000}, (_, i) => i));
+
+  const coins: Coin[] = useMemo(() => uniqBy(manifest, 'symbol'), []);
 
   const filteredCoins = useMemo(() => {
     let list = coins;
@@ -44,13 +51,46 @@ export default function IconGallery() {
       list = [...list].sort(() => Math.random() - 0.5);
     }
     
+    if (manualOrder.length > 0) {
+      const orderMap = new Map(manualOrder.map((sym, i) => [sym, i]));
+      list = [...list].sort((a, b) => {
+        const aIdx = orderMap.has(a.symbol) ? orderMap.get(a.symbol)! : 99999;
+        const bIdx = orderMap.has(b.symbol) ? orderMap.get(b.symbol)! : 99999;
+        return aIdx - bIdx;
+      });
+    }
+    
     return list;
-  }, [search, coins, shuffleSeed]);
+  }, [search, coins, shuffleSeed, manualOrder]);
+
+  // Native LocalStorage API
+  useEffect(() => {
+    const savedVariant = localStorage.getItem("devicons-variant");
+    if (savedVariant && ["color", "white", "black", "icon"].includes(savedVariant)) {
+      setVariant(savedVariant as Variant);
+    }
+  }, []);
+
+  // Native IntersectionObserver for Infinite Scroll
+  useEffect(() => {
+    if (observerRef.current) observerRef.current.disconnect();
+    observerRef.current = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setVisibleCount(prev => Math.min(prev + 24, coins.length));
+      }
+    }, { rootMargin: "200px" });
+    
+    if (sentinelRef.current) observerRef.current.observe(sentinelRef.current);
+    
+    return () => observerRef.current?.disconnect();
+  }, [coins.length]);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
     startTransition(() => {
       setSearch(e.target.value);
+      setVisibleCount(24);
+      setManualOrder([]);
     });
   };
 
@@ -67,14 +107,53 @@ export default function IconGallery() {
   };
 
   const handleVariantChange = (v: Variant) => {
-    executeWithTransition(() => setVariant(v));
+    executeWithTransition(() => {
+      setVariant(v);
+      localStorage.setItem("devicons-variant", v);
+    });
   };
 
   const handleShuffle = () => {
     executeWithTransition(() => {
       setShuffleSeed(prev => prev + 1);
+      setVisibleCount(24);
+      setManualOrder([]);
       setSlotMap(prev => [...prev].sort(() => Math.random() - 0.5));
     });
+  };
+
+  const handleDragStart = (e: React.DragEvent<HTMLButtonElement>, coin: Coin) => {
+    const url = `https://cdn.jsdelivr.net/gh/igmrrf/ikons@main/public/cryptocurrency/svg/${variant}/${coin.symbol.toLowerCase()}.svg`;
+    e.dataTransfer.setData("text/plain", url);
+    e.dataTransfer.setData("text/uri-list", url);
+    e.dataTransfer.setData("text/x-coin-symbol", coin.symbol);
+    // This allows native drag-to-desktop saving on supported browsers
+    e.dataTransfer.setData("DownloadURL", `image/svg+xml:${coin.symbol.toLowerCase()}.svg:${url}`);
+    e.dataTransfer.effectAllowed = "copyMove";
+  };
+
+  const handleDrop = (e: React.DragEvent<HTMLButtonElement>, targetCoin: Coin) => {
+    e.preventDefault();
+    const sourceSymbol = e.dataTransfer.getData("text/x-coin-symbol");
+    if (!sourceSymbol || sourceSymbol === targetCoin.symbol) return;
+    
+    executeWithTransition(() => {
+      setManualOrder(prevOrder => {
+        const currentList = prevOrder.length > 0 ? prevOrder : filteredCoins.map(c => c.symbol);
+        const sourceIdx = currentList.indexOf(sourceSymbol);
+        const targetIdx = currentList.indexOf(targetCoin.symbol);
+        if (sourceIdx === -1 || targetIdx === -1) return currentList;
+        
+        const newList = [...currentList];
+        newList.splice(sourceIdx, 1);
+        newList.splice(targetIdx, 0, sourceSymbol);
+        return newList;
+      });
+    });
+  };
+
+  const handleDragOver = (e: React.DragEvent<HTMLButtonElement>) => {
+    e.preventDefault();
   };
 
   const handleCopyUrl = (coinSymbol: string) => {
@@ -201,24 +280,29 @@ export default function IconGallery() {
 
       {/* Grid */}
       <div className={`w-full grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-6 z-10 transition-opacity duration-300 ${isPending ? 'opacity-50' : 'opacity-100'}`}>
-        {filteredCoins.slice(0, 24).map((coin, index) => (
+        {filteredCoins.slice(0, visibleCount).map((coin, index) => (
           <div 
             key={coin.symbol} 
-            className="relative" 
+            className="relative @container" 
             style={{ viewTransitionName: `icon-slot-${slotMap[index]}` } as React.CSSProperties}
           >
             <button
               popoverTarget={`popover-${coin.symbol}`}
-              className="glass-panel rounded-xl p-3 sm:p-6 relative group overflow-hidden border-white/10 hover:border-neon-cyan/50 transition-colors flex flex-col items-center w-full h-full text-left focus:outline-none focus:ring-2 focus:ring-neon-cyan"
+              draggable={true}
+              onDragStart={(e) => handleDragStart(e, coin)}
+              onDrop={(e) => handleDrop(e, coin)}
+              onDragOver={handleDragOver}
+              title="Drag to desktop to save SVG natively, or drop on another icon to reorder"
+              className="glass-panel rounded-xl p-3 @min-[120px]:p-6 relative group overflow-hidden border-white/10 hover:border-neon-cyan/50 transition-colors flex flex-col items-center w-full h-full text-left focus:outline-none focus:ring-2 focus:ring-neon-cyan cursor-grab active:cursor-grabbing"
             >
               <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{
                   background: `linear-gradient(to bottom right, ${coin.color}20, transparent)`,
                 }}
               />
               
-              <div className="h-10 w-10 sm:h-16 sm:w-16 mb-2 sm:mb-4 flex items-center justify-center relative">
+              <div className="h-10 w-10 @min-[120px]:h-16 @min-[120px]:w-16 mb-2 @min-[120px]:mb-4 flex items-center justify-center relative pointer-events-none">
                 <Image
                   className={`transition-transform duration-500 group-hover:scale-110 w-full h-full object-contain ${variant === 'black' ? 'drop-shadow-none' : 'drop-shadow-[0_0_10px_rgba(0,240,255,0.2)]'}`}
                   src={`/cryptocurrency/svg/${variant}/${coin.symbol.toLowerCase()}.svg`}
@@ -232,11 +316,11 @@ export default function IconGallery() {
                 />
               </div>
               
-              <div className="text-center relative z-10 w-full overflow-hidden">
-                <h3 className="font-mono text-[10px] sm:text-xs text-white font-bold tracking-wider mb-0.5 sm:mb-1 truncate w-full">
+              <div className="text-center relative z-10 w-full overflow-hidden @max-[119px]:hidden">
+                <h3 className="font-mono text-[10px] @min-[120px]:text-xs text-white font-bold tracking-wider mb-0.5 @min-[120px]:mb-1 truncate w-full">
                   {coin.symbol}
                 </h3>
-                <p className="font-sans text-[8px] sm:text-[10px] text-gray-400 truncate w-full">
+                <p className="font-sans text-[8px] @min-[120px]:text-[10px] text-gray-400 truncate w-full">
                   {coin.name}
                 </p>
               </div>
@@ -313,16 +397,13 @@ export default function IconGallery() {
           </div>
         ))}
       </div>
+      
+      {/* Intersection Observer Sentinel */}
+      <div ref={sentinelRef} className="w-full h-20 opacity-0 pointer-events-none" />
 
       {filteredCoins.length === 0 && (
         <div className="text-center py-20 font-mono text-neon-cyan border border-neon-cyan/20 glass-panel rounded-xl w-full">
           No icons found matching "{search}"
-        </div>
-      )}
-      
-      {filteredCoins.length > 24 && (
-        <div className="mt-12 font-mono text-xs text-gray-500 uppercase tracking-widest">
-          Showing 24 of {filteredCoins.length} items. Use search to find more.
         </div>
       )}
     </div>
