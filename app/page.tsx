@@ -40,6 +40,7 @@ export default function Home() {
           <button
             popoverTarget="features-popover"
             title="View Implemented Features"
+            aria-label="View Features"
             className="flex items-center gap-2 font-mono text-xs sm:text-sm tracking-widest uppercase py-2 px-4 rounded-none border border-white/20 hover:border-neon-cyan hover:bg-neon-cyan/10 transition-colors text-gray-300"
           >
             <svg
@@ -62,6 +63,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
             title="GitHub Repository"
+            aria-label="GitHub Repository"
             className="flex items-center justify-center p-2 rounded-none border border-white/20 hover:border-neon-cyan hover:bg-neon-cyan/10 transition-colors text-gray-300"
           >
             <svg
@@ -164,6 +166,7 @@ export default function Home() {
         <button
           popoverTarget="features-popover"
           popoverTargetAction="hide"
+          aria-label="Close Features Matrix"
           className="font-mono text-xs uppercase px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/20 rounded-lg w-full transition-colors text-gray-300"
         >
           [ Close Matrix ]

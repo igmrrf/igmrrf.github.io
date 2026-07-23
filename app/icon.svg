@@ -1,0 +1,10 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="128" height="128" rx="24" fill="#030305"/>
+  <!-- Subtle grid background -->
+  <path d="M32 0V128M64 0V128M96 0V128M0 32H128M0 64H128M0 96H128" stroke="#e0e0e0" stroke-opacity="0.05" stroke-width="1"/>
+  <!-- Glowing border -->
+  <rect x="4" y="4" width="120" height="120" rx="20" stroke="#00f0ff" stroke-width="2" stroke-opacity="0.8"/>
+  <!-- Angled Brackets / Logo -->
+  <path d="M52 36L28 64L52 92" stroke="#00f0ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M76 36L100 64L76 92" stroke="#e0e0e0" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
