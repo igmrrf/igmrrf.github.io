@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-space-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-neon-cyan: #00f0ff;
+  --color-neon-green: #39ff14;
+  --color-space-dark: #030305;
+  --color-space-surface: rgba(10, 10, 12, 0.7);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-space-dark);
+  color: #e0e0e0;
+  /* Add subtle grain/noise */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+@layer utilities {
+  .glass-panel {
+    background: var(--color-space-surface);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--color-glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .neon-text-cyan {
+    color: var(--color-neon-cyan);
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+  }
+
+  .neon-border-cyan {
+    border-color: var(--color-neon-cyan);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3), inset 0 0 10px rgba(0, 240, 255, 0.1);
+  }
+}
