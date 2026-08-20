@@ -22,28 +22,61 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "DevIcons | System",
+    default: "DevIcons — Developer Icon & Raw Asset CDN Registry",
     template: "%s | DevIcons",
   },
   description:
-    "A high-craft developer icon repository merging native web capabilities with structural aesthetics.",
-  keywords: ["icons", "developer icons", "svg", "react icons", "web design", "ui components"],
-  authors: [{ name: "DevIcons" }],
-  creator: "DevIcons",
+    "High-craft developer icon registry with 620+ Cryptocurrency and Social & Brand assets. Direct GitHub raw file access, jsDelivr CDN endpoints, and an interactive Neo-Glass web application.",
+  keywords: [
+    "icons",
+    "developer icons",
+    "cryptocurrency icons",
+    "social icons",
+    "tech logos",
+    "svg icons",
+    "github raw icons",
+    "jsdelivr cdn icons",
+    "crypto logos svg",
+    "free svg icons",
+    "react icons",
+    "web design assets"
+  ],
+  authors: [{ name: "igmrrf", url: "https://github.com/igmrrf" }],
+  creator: "igmrrf",
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://igmrrf.github.io'),
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: ['/icon.svg'],
+    apple: [
+      { url: '/apple-icon.svg', sizes: '180x180', type: 'image/svg+xml' },
+    ],
+  },
+  manifest: '/manifest.webmanifest',
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "/",
-    title: "DevIcons | System",
-    description: "A high-craft developer icon repository merging native web capabilities with structural aesthetics.",
+    url: "https://igmrrf.github.io",
+    title: "DevIcons — Developer Icon & Raw Asset CDN Registry",
+    description: "High-craft developer icon registry with 620+ Cryptocurrency and Social & Brand assets with direct GitHub raw file access and jsDelivr CDN endpoints.",
     siteName: "DevIcons",
+    images: [
+      {
+        url: '/icon.svg',
+        width: 512,
+        height: 512,
+        alt: 'DevIcons Brand Glyph',
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DevIcons | System",
-    description: "A high-craft developer icon repository merging native web capabilities with structural aesthetics.",
-    creator: "@devicons",
+    title: "DevIcons — Developer Icon & Raw Asset CDN Registry",
+    description: "High-craft developer icon registry with 620+ Cryptocurrency and Social & Brand assets with direct GitHub raw file access.",
+    creator: "@igmrrf",
+    images: ['/icon.svg'],
   },
   robots: {
     index: true,
@@ -65,10 +98,22 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "DevIcons | System",
+    "@type": "WebApplication",
+    "name": "DevIcons",
     "url": process.env.NEXT_PUBLIC_BASE_URL || "https://igmrrf.github.io",
-    "description": "A high-craft developer icon repository merging native web capabilities with structural aesthetics.",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "All",
+    "description": "High-craft developer icon registry with 620+ Cryptocurrency and Social & Brand assets with direct GitHub raw file access and jsDelivr CDN distribution.",
+    "author": {
+      "@type": "Person",
+      "name": "igmrrf",
+      "url": "https://github.com/igmrrf"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
   };
 
   return (
