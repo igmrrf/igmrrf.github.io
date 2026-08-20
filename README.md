@@ -4,6 +4,14 @@
 
 This repository serves as both the GitHub Pages web application for interactive browsing and direct CDN/Raw file hosting for over **620+ icons** across **Cryptocurrency** assets, **Social & Tech Brand** marks, and financial data registries.
 
+<br />
+
+<div align="center">
+  <img src="./public/devicons.png" alt="DevIcons Showcase" width="100%" style="border-radius: 16px; border: 1px solid rgba(0, 240, 255, 0.3); box-shadow: 0 0 30px rgba(0, 240, 255, 0.15);" />
+</div>
+
+<br />
+
 ---
 
 ## 🚀 GitHub Raw File & jsDelivr CDN Access
