@@ -1,0 +1,1487 @@
+[
+  {
+    "symbol": "AdobeIllustrator",
+    "name": "Adobe Illustrator",
+    "category": "social",
+    "color": "#FF9A00",
+    "files": {
+      "color": "AdobeIllustrator.svg",
+      "black": "AdobeIllustrator_black.svg",
+      "white": "AdobeIllustrator_white.svg"
+    }
+  },
+  {
+    "symbol": "AdobePhotoshop",
+    "name": "Adobe Photoshop",
+    "category": "social",
+    "color": "#31A8FF",
+    "files": {
+      "color": "AdobePhotoshop.svg",
+      "black": "AdobePhotoshop_black.svg",
+      "white": "AdobePhotoshop_white.svg"
+    }
+  },
+  {
+    "symbol": "AdobeXD",
+    "name": "Adobe XD",
+    "category": "social",
+    "color": "#FF61F6",
+    "files": {
+      "color": "AdobeXD.svg",
+      "black": "AdobeXD_black.svg",
+      "white": "AdobeXD_white.svg"
+    }
+  },
+  {
+    "symbol": "Aim",
+    "name": "Aim",
+    "category": "social",
+    "color": "#FFC000",
+    "files": {
+      "color": "Aim.svg",
+      "black": "Aim_black.svg",
+      "white": "Aim_white.svg"
+    }
+  },
+  {
+    "symbol": "Airbnb",
+    "name": "Airbnb",
+    "category": "social",
+    "color": "#FF5A5F",
+    "files": {
+      "color": "Airbnb.svg",
+      "black": "Airbnb_black.svg",
+      "white": "Airbnb_white.svg"
+    }
+  },
+  {
+    "symbol": "Amazon",
+    "name": "Amazon",
+    "category": "social",
+    "color": "#FF9900",
+    "files": {
+      "color": "Amazon.svg",
+      "black": "Amazon_black.svg",
+      "white": "Amazon_white.svg"
+    }
+  },
+  {
+    "symbol": "Android",
+    "name": "Android",
+    "category": "social",
+    "color": "#3DDC84",
+    "files": {
+      "color": "Android.svg",
+      "black": "Android_black.svg",
+      "white": "Android_white.svg"
+    }
+  },
+  {
+    "symbol": "Apple",
+    "name": "Apple",
+    "category": "social",
+    "color": "#A2AAAD",
+    "files": {
+      "color": "Apple.svg",
+      "black": "Apple_black.svg",
+      "white": "Apple_white.svg"
+    }
+  },
+  {
+    "symbol": "Atlassian",
+    "name": "Atlassian",
+    "category": "social",
+    "color": "#0052CC",
+    "files": {
+      "color": "Atlassian.svg",
+      "black": "Atlassian_black.svg",
+      "white": "Atlassian_white.svg"
+    }
+  },
+  {
+    "symbol": "Badoo",
+    "name": "Badoo",
+    "category": "social",
+    "color": "#783BF9",
+    "files": {
+      "color": "Badoo.svg",
+      "black": "Badoo_black.svg",
+      "white": "Badoo_white.svg"
+    }
+  },
+  {
+    "symbol": "Basecamp",
+    "name": "Basecamp",
+    "category": "social",
+    "color": "#24CD79",
+    "files": {
+      "color": "Basecamp.svg",
+      "black": "Basecamp_black.svg",
+      "white": "Basecamp_white.svg"
+    }
+  },
+  {
+    "symbol": "Behance",
+    "name": "Behance",
+    "category": "social",
+    "color": "#1769FF",
+    "files": {
+      "color": "Behance.svg",
+      "black": "Behance_black.svg",
+      "white": "Behance_white.svg"
+    }
+  },
+  {
+    "symbol": "Bing",
+    "name": "Bing",
+    "category": "social",
+    "color": "#008373",
+    "files": {
+      "color": "Bing.svg",
+      "black": "Bing_black.svg",
+      "white": "Bing_white.svg"
+    }
+  },
+  {
+    "symbol": "Bitbucket",
+    "name": "Bitbucket",
+    "category": "social",
+    "color": "#0052CC",
+    "files": {
+      "color": "Bitbucket.svg",
+      "black": "Bitbucket_black.svg",
+      "white": "Bitbucket_white.svg"
+    }
+  },
+  {
+    "symbol": "Bitcoin",
+    "name": "Bitcoin",
+    "category": "social",
+    "color": "#F7931A",
+    "files": {
+      "color": "Bitcoin.svg",
+      "black": "Bitcoin_black.svg",
+      "white": "Bitcoin_white.svg"
+    }
+  },
+  {
+    "symbol": "Bittorrent",
+    "name": "Bittorrent",
+    "category": "social",
+    "color": "#157FFB",
+    "files": {
+      "color": "Bittorrent.svg",
+      "black": "Bittorrent_black.svg",
+      "white": "Bittorrent_white.svg"
+    }
+  },
+  {
+    "symbol": "Blogger",
+    "name": "Blogger",
+    "category": "social",
+    "color": "#F57D00",
+    "files": {
+      "color": "Blogger.svg",
+      "black": "Blogger_black.svg",
+      "white": "Blogger_white.svg"
+    }
+  },
+  {
+    "symbol": "Buffer",
+    "name": "Buffer",
+    "category": "social",
+    "color": "#231F20",
+    "files": {
+      "color": "Buffer.svg",
+      "black": "Buffer_black.svg",
+      "white": "Buffer_white.svg"
+    }
+  },
+  {
+    "symbol": "BuzzFeed",
+    "name": "Buzz Feed",
+    "category": "social",
+    "color": "#EE3322",
+    "files": {
+      "color": "BuzzFeed.svg",
+      "black": "BuzzFeed_black.svg",
+      "white": "BuzzFeed_white.svg"
+    }
+  },
+  {
+    "symbol": "Codeopen",
+    "name": "Codeopen",
+    "category": "social",
+    "color": "#000000",
+    "files": {
+      "color": "Codeopen.svg",
+      "black": "Codeopen_black.svg",
+      "white": "Codeopen_white.svg"
+    }
+  },
+  {
+    "symbol": "Confluence",
+    "name": "Confluence",
+    "category": "social",
+    "color": "#172B4D",
+    "files": {
+      "color": "Confluence.svg",
+      "black": "Confluence_black.svg",
+      "white": "Confluence_white.svg"
+    }
+  },
+  {
+    "symbol": "Coub",
+    "name": "Coub",
+    "category": "social",
+    "color": "#2F80ED",
+    "files": {
+      "color": "Coub.svg",
+      "black": "Coub_black.svg",
+      "white": "Coub_white.svg"
+    }
+  },
+  {
+    "symbol": "Creativemarket",
+    "name": "Creativemarket",
+    "category": "social",
+    "color": "#8BA79B",
+    "files": {
+      "color": "Creativemarket.svg",
+      "black": "Creativemarket_black.svg",
+      "white": "Creativemarket_white.svg"
+    }
+  },
+  {
+    "symbol": "Dailymotion",
+    "name": "Dailymotion",
+    "category": "social",
+    "color": "#0066DC",
+    "files": {
+      "color": "Dailymotion.svg",
+      "black": "Dailymotion_black.svg",
+      "white": "Dailymotion_white.svg"
+    }
+  },
+  {
+    "symbol": "Digg",
+    "name": "Digg",
+    "category": "social",
+    "color": "#000000",
+    "files": {
+      "color": "Digg.svg",
+      "black": "Digg_black.svg",
+      "white": "Digg_white.svg"
+    }
+  },
+  {
+    "symbol": "Discord",
+    "name": "Discord",
+    "category": "social",
+    "color": "#5865F2",
+    "files": {
+      "color": "Discord.svg",
+      "black": "Discord_black.svg",
+      "white": "Discord_white.svg"
+    }
+  },
+  {
+    "symbol": "Dribbble",
+    "name": "Dribbble",
+    "category": "social",
+    "color": "#EA4C89",
+    "files": {
+      "color": "Dribbble.svg",
+      "black": "Dribbble_black.svg",
+      "white": "Dribbble_white.svg"
+    }
+  },
+  {
+    "symbol": "Dropbox",
+    "name": "Dropbox",
+    "category": "social",
+    "color": "#0061FF",
+    "files": {
+      "color": "Dropbox.svg",
+      "black": "Dropbox_black.svg",
+      "white": "Dropbox_white.svg"
+    }
+  },
+  {
+    "symbol": "Drupal",
+    "name": "Drupal",
+    "category": "social",
+    "color": "#0678BE",
+    "files": {
+      "color": "Drupal.svg",
+      "black": "Drupal_black.svg",
+      "white": "Drupal_white.svg"
+    }
+  },
+  {
+    "symbol": "DuckDuckGo",
+    "name": "Duck Duck Go",
+    "category": "social",
+    "color": "#DE5833",
+    "files": {
+      "color": "DuckDuckGo.svg",
+      "black": "DuckDuckGo_black.svg",
+      "white": "DuckDuckGo_white.svg"
+    }
+  },
+  {
+    "symbol": "Edge",
+    "name": "Edge",
+    "category": "social",
+    "color": "#0078D7",
+    "files": {
+      "color": "Edge.svg",
+      "black": "Edge_black.svg",
+      "white": "Edge_white.svg"
+    }
+  },
+  {
+    "symbol": "Epic Games",
+    "name": "Epic Games",
+    "category": "social",
+    "color": "#313131",
+    "files": {
+      "color": "Epic Games.svg",
+      "black": "Epic Games_black.svg",
+      "white": "Epic Games_white.svg"
+    }
+  },
+  {
+    "symbol": "Ethereum",
+    "name": "Ethereum",
+    "category": "social",
+    "color": "#627EEA",
+    "files": {
+      "color": "Ethereum.svg",
+      "black": "Ethereum_black.svg",
+      "white": "Ethereum_white.svg"
+    }
+  },
+  {
+    "symbol": "Evernote",
+    "name": "Evernote",
+    "category": "social",
+    "color": "#00A82D",
+    "files": {
+      "color": "Evernote.svg",
+      "black": "Evernote_black.svg",
+      "white": "Evernote_white.svg"
+    }
+  },
+  {
+    "symbol": "Facebook",
+    "name": "Facebook",
+    "category": "social",
+    "color": "#1877F2",
+    "files": {
+      "color": "Facebook.svg",
+      "black": "Facebook_black.svg",
+      "white": "Facebook_white.svg"
+    }
+  },
+  {
+    "symbol": "Fancy",
+    "name": "Fancy",
+    "category": "social",
+    "color": "#35A7FF",
+    "files": {
+      "color": "Fancy.svg",
+      "black": "Fancy_black.svg",
+      "white": "Fancy_white.svg"
+    }
+  },
+  {
+    "symbol": "Figma",
+    "name": "Figma",
+    "category": "social",
+    "color": "#F24E1E",
+    "files": {
+      "color": "Figma.svg",
+      "black": "Figma_black.svg",
+      "white": "Figma_white.svg"
+    }
+  },
+  {
+    "symbol": "Firefox",
+    "name": "Firefox",
+    "category": "social",
+    "color": "#FF7139",
+    "files": {
+      "color": "Firefox.svg",
+      "black": "Firefox_black.svg",
+      "white": "Firefox_white.svg"
+    }
+  },
+  {
+    "symbol": "Flickr",
+    "name": "Flickr",
+    "category": "social",
+    "color": "#0063DC",
+    "files": {
+      "color": "Flickr.svg",
+      "black": "Flickr_black.svg",
+      "white": "Flickr_white.svg"
+    }
+  },
+  {
+    "symbol": "Folio",
+    "name": "Folio",
+    "category": "social",
+    "color": "#3B82F6",
+    "files": {
+      "color": "Folio.svg",
+      "black": "Folio_black.svg",
+      "white": "Folio_white.svg"
+    }
+  },
+  {
+    "symbol": "Foursquare",
+    "name": "Foursquare",
+    "category": "social",
+    "color": "#F94877",
+    "files": {
+      "color": "Foursquare.svg",
+      "black": "Foursquare_black.svg",
+      "white": "Foursquare_white.svg"
+    }
+  },
+  {
+    "symbol": "Framer",
+    "name": "Framer",
+    "category": "social",
+    "color": "#0055FF",
+    "files": {
+      "color": "Framer.svg",
+      "black": "Framer_black.svg",
+      "white": "Framer_white.svg"
+    }
+  },
+  {
+    "symbol": "Geo",
+    "name": "Geo",
+    "category": "social",
+    "color": "#4A90E2",
+    "files": {
+      "color": null,
+      "black": "Geo_black.svg",
+      "white": "Geo_white.svg"
+    }
+  },
+  {
+    "symbol": "Github",
+    "name": "Github",
+    "category": "social",
+    "color": "#24292E",
+    "files": {
+      "color": "Github.svg",
+      "black": "Github_black.svg",
+      "white": "Github_white.svg"
+    }
+  },
+  {
+    "symbol": "Gmail",
+    "name": "Gmail",
+    "category": "social",
+    "color": "#EA4335",
+    "files": {
+      "color": "Gmail.svg",
+      "black": "Gmail_black.svg",
+      "white": "Gmail_white.svg"
+    }
+  },
+  {
+    "symbol": "Google",
+    "name": "Google",
+    "category": "social",
+    "color": "#4285F4",
+    "files": {
+      "color": "Google.svg",
+      "black": "Google_black.svg",
+      "white": "Google_white.svg"
+    }
+  },
+  {
+    "symbol": "GooglePlay",
+    "name": "Google Play",
+    "category": "social",
+    "color": "#01875F",
+    "files": {
+      "color": "GooglePlay.svg",
+      "black": "GooglePlay_black.svg",
+      "white": "GooglePlay_white.svg"
+    }
+  },
+  {
+    "symbol": "HTML5",
+    "name": "HTML5",
+    "category": "social",
+    "color": "#E34F26",
+    "files": {
+      "color": "HTML5.svg",
+      "black": "HTML5_black.svg",
+      "white": "HTML5_white.svg"
+    }
+  },
+  {
+    "symbol": "Hola",
+    "name": "Hola",
+    "category": "social",
+    "color": "#FF2B2B",
+    "files": {
+      "color": "Hola.svg",
+      "black": "Hola_black.svg",
+      "white": "Hola_white.svg"
+    }
+  },
+  {
+    "symbol": "Iconjar",
+    "name": "Iconjar",
+    "category": "social",
+    "color": "#16A085",
+    "files": {
+      "color": "Iconjar.svg",
+      "black": null,
+      "white": null
+    }
+  },
+  {
+    "symbol": "Instagram",
+    "name": "Instagram",
+    "category": "social",
+    "color": "#E4405F",
+    "files": {
+      "color": "Instagram.svg",
+      "black": "Instagram_black.svg",
+      "white": "Instagram_white.svg"
+    }
+  },
+  {
+    "symbol": "Intercom",
+    "name": "Intercom",
+    "category": "social",
+    "color": "#1F8CEB",
+    "files": {
+      "color": "Intercom.svg",
+      "black": "Intercom_black.svg",
+      "white": "Intercom_white.svg"
+    }
+  },
+  {
+    "symbol": "Invision",
+    "name": "Invision",
+    "category": "social",
+    "color": "#FF3366",
+    "files": {
+      "color": "Invision.svg",
+      "black": "Invision_black.svg",
+      "white": "Invision_white.svg"
+    }
+  },
+  {
+    "symbol": "Jira",
+    "name": "Jira",
+    "category": "social",
+    "color": "#0052CC",
+    "files": {
+      "color": "Jira.svg",
+      "black": "Jira_black.svg",
+      "white": "Jira_white.svg"
+    }
+  },
+  {
+    "symbol": "Kaixin001",
+    "name": "Kaixin001",
+    "category": "social",
+    "color": "#FF6600",
+    "files": {
+      "color": "Kaixin001.svg",
+      "black": "Kaixin001_black.svg",
+      "white": "Kaixin001_white.svg"
+    }
+  },
+  {
+    "symbol": "KakaoTalk",
+    "name": "Kakao Talk",
+    "category": "social",
+    "color": "#FFE812",
+    "files": {
+      "color": "KakaoTalk.svg",
+      "black": "KakaoTalk_black.svg",
+      "white": "KakaoTalk_white.svg"
+    }
+  },
+  {
+    "symbol": "Kickstarter",
+    "name": "Kickstarter",
+    "category": "social",
+    "color": "#05CE78",
+    "files": {
+      "color": "Kickstarter.svg",
+      "black": "Kickstarter_black.svg",
+      "white": "Kickstarter_white.svg"
+    }
+  },
+  {
+    "symbol": "Line",
+    "name": "Line",
+    "category": "social",
+    "color": "#06C755",
+    "files": {
+      "color": "Line.svg",
+      "black": "Line_black.svg",
+      "white": "Line_white.svg"
+    }
+  },
+  {
+    "symbol": "LinkedIN",
+    "name": "LinkedIn",
+    "category": "social",
+    "color": "#0A66C2",
+    "files": {
+      "color": "LinkedIN.svg",
+      "black": "LinkedIN_black.svg",
+      "white": "LinkedIN_white.svg"
+    }
+  },
+  {
+    "symbol": "MailChimp",
+    "name": "Mail Chimp",
+    "category": "social",
+    "color": "#FFE01B",
+    "files": {
+      "color": "MailChimp.svg",
+      "black": "MailChimp_black.svg",
+      "white": "MailChimp_white.svg"
+    }
+  },
+  {
+    "symbol": "Mail_ru",
+    "name": "Mail.ru",
+    "category": "social",
+    "color": "#168DE2",
+    "files": {
+      "color": "Mail_ru.svg",
+      "black": "Mail_ru_black.svg",
+      "white": "Mail_ru_white.svg"
+    }
+  },
+  {
+    "symbol": "Marvel",
+    "name": "Marvel",
+    "category": "social",
+    "color": "#ED1D24",
+    "files": {
+      "color": "Marvel.svg",
+      "black": "Marvel_black.svg",
+      "white": "Marvel_white.svg"
+    }
+  },
+  {
+    "symbol": "Mastercard",
+    "name": "Mastercard",
+    "category": "social",
+    "color": "#EB001B",
+    "files": {
+      "color": "Mastercard.svg",
+      "black": "Mastercard_black.svg",
+      "white": "Mastercard_white.svg"
+    }
+  },
+  {
+    "symbol": "Medium",
+    "name": "Medium",
+    "category": "social",
+    "color": "#000000",
+    "files": {
+      "color": "Medium.svg",
+      "black": "Medium_black.svg",
+      "white": "Medium_white.svg"
+    }
+  },
+  {
+    "symbol": "Messenger",
+    "name": "Messenger",
+    "category": "social",
+    "color": "#00B2FF",
+    "files": {
+      "color": "Messenger.svg",
+      "black": "Messenger_black.svg",
+      "white": "Messenger_white.svg"
+    }
+  },
+  {
+    "symbol": "Mi",
+    "name": "Mi",
+    "category": "social",
+    "color": "#FF6900",
+    "files": {
+      "color": "Mi.svg",
+      "black": "Mi_black.svg",
+      "white": "Mi_white.svg"
+    }
+  },
+  {
+    "symbol": "Microsoft",
+    "name": "Microsoft",
+    "category": "social",
+    "color": "#00A4EF",
+    "files": {
+      "color": "Microsoft.svg",
+      "black": "Microsoft_black.svg",
+      "white": "Microsoft_white.svg"
+    }
+  },
+  {
+    "symbol": "Miliao",
+    "name": "Miliao",
+    "category": "social",
+    "color": "#FF9900",
+    "files": {
+      "color": "Miliao.svg",
+      "black": "Miliao_black.svg",
+      "white": "Miliao_white.svg"
+    }
+  },
+  {
+    "symbol": "Netflix",
+    "name": "Netflix",
+    "category": "social",
+    "color": "#E50914",
+    "files": {
+      "color": "Netflix.svg",
+      "black": "Netflix_black.svg",
+      "white": "Netflix_white.svg"
+    }
+  },
+  {
+    "symbol": "Nintendo",
+    "name": "Nintendo",
+    "category": "social",
+    "color": "#E60012",
+    "files": {
+      "color": "Nintendo.svg",
+      "black": "Nintendo_black.svg",
+      "white": "Nintendo_white.svg"
+    }
+  },
+  {
+    "symbol": "Notion",
+    "name": "Notion",
+    "category": "social",
+    "color": "#000000",
+    "files": {
+      "color": "Notion.svg",
+      "black": "Notion_black.svg",
+      "white": "Notion_white.svg"
+    }
+  },
+  {
+    "symbol": "OK",
+    "name": "Odnoklassniki (OK)",
+    "category": "social",
+    "color": "#EE8208",
+    "files": {
+      "color": "OK.svg",
+      "black": "OK_black.svg",
+      "white": "OK_white.svg"
+    }
+  },
+  {
+    "symbol": "Opera",
+    "name": "Opera",
+    "category": "social",
+    "color": "#FF1B2D",
+    "files": {
+      "color": "Opera.svg",
+      "black": "Opera_black.svg",
+      "white": "Opera_white.svg"
+    }
+  },
+  {
+    "symbol": "Outlook",
+    "name": "Outlook",
+    "category": "social",
+    "color": "#0078D4",
+    "files": {
+      "color": "Outlook.svg",
+      "black": "Outlook_black.svg",
+      "white": "Outlook_white.svg"
+    }
+  },
+  {
+    "symbol": "Patreon",
+    "name": "Patreon",
+    "category": "social",
+    "color": "#FF424D",
+    "files": {
+      "color": "Patreon.svg",
+      "black": "Patreon_black.svg",
+      "white": "Patreon_white.svg"
+    }
+  },
+  {
+    "symbol": "PayPal",
+    "name": "Pay Pal",
+    "category": "social",
+    "color": "#00457C",
+    "files": {
+      "color": "PayPal.svg",
+      "black": "PayPal_black.svg",
+      "white": "PayPal_white.svg"
+    }
+  },
+  {
+    "symbol": "Periscope",
+    "name": "Periscope",
+    "category": "social",
+    "color": "#40A4C4",
+    "files": {
+      "color": "Periscope.svg",
+      "black": "Periscope_black.svg",
+      "white": "Periscope_white.svg"
+    }
+  },
+  {
+    "symbol": "Pinterest",
+    "name": "Pinterest",
+    "category": "social",
+    "color": "#BD081C",
+    "files": {
+      "color": "Pinterest.svg",
+      "black": "Pinterest_black.svg",
+      "white": "Pinterest_white.svg"
+    }
+  },
+  {
+    "symbol": "Playstation",
+    "name": "Playstation",
+    "category": "social",
+    "color": "#003791",
+    "files": {
+      "color": "Playstation.svg",
+      "black": "Playstation_black.svg",
+      "white": "Playstation_white.svg"
+    }
+  },
+  {
+    "symbol": "Pocket",
+    "name": "Pocket",
+    "category": "social",
+    "color": "#EF4056",
+    "files": {
+      "color": "Pocket.svg",
+      "black": "Pocket_black.svg",
+      "white": "Pocket_white.svg"
+    }
+  },
+  {
+    "symbol": "ProductHunt",
+    "name": "Product Hunt",
+    "category": "social",
+    "color": "#DA552F",
+    "files": {
+      "color": "ProductHunt.svg",
+      "black": "ProductHunt_black.svg",
+      "white": "ProductHunt_white.svg"
+    }
+  },
+  {
+    "symbol": "QQ",
+    "name": "QQ",
+    "category": "social",
+    "color": "#12B7F5",
+    "files": {
+      "color": "QQ.svg",
+      "black": "QQ_black.svg",
+      "white": "QQ_white.svg"
+    }
+  },
+  {
+    "symbol": "Quora",
+    "name": "Quora",
+    "category": "social",
+    "color": "#B92B27",
+    "files": {
+      "color": "Quora.svg",
+      "black": "Quora_black.svg",
+      "white": "Quora_white.svg"
+    }
+  },
+  {
+    "symbol": "RSS",
+    "name": "RSS",
+    "category": "social",
+    "color": "#FFA500",
+    "files": {
+      "color": "RSS.svg",
+      "black": "RSS_black.svg",
+      "white": "RSS_white.svg"
+    }
+  },
+  {
+    "symbol": "Reddit",
+    "name": "Reddit",
+    "category": "social",
+    "color": "#FF4500",
+    "files": {
+      "color": "Reddit.svg",
+      "black": "Reddit_black.svg",
+      "white": "Reddit_white.svg"
+    }
+  },
+  {
+    "symbol": "Renren",
+    "name": "Renren",
+    "category": "social",
+    "color": "#005EAC",
+    "files": {
+      "color": "Renren.svg",
+      "black": "Renren_black.svg",
+      "white": "Renren_white.svg"
+    }
+  },
+  {
+    "symbol": "Safari",
+    "name": "Safari",
+    "category": "social",
+    "color": "#006CFF",
+    "files": {
+      "color": "Safari.svg",
+      "black": "Safari_black.svg",
+      "white": "Safari_white.svg"
+    }
+  },
+  {
+    "symbol": "Shopify",
+    "name": "Shopify",
+    "category": "social",
+    "color": "#7AB55C",
+    "files": {
+      "color": "Shopify.svg",
+      "black": "Shopify_black.svg",
+      "white": "Shopify_white.svg"
+    }
+  },
+  {
+    "symbol": "Shutterstock",
+    "name": "Shutterstock",
+    "category": "social",
+    "color": "#EE2B24",
+    "files": {
+      "color": "Shutterstock.svg",
+      "black": "Shutterstock_black.svg",
+      "white": "Shutterstock_white.svg"
+    }
+  },
+  {
+    "symbol": "Sketch",
+    "name": "Sketch",
+    "category": "social",
+    "color": "#FDB300",
+    "files": {
+      "color": "Sketch.svg",
+      "black": "Sketch_black.svg",
+      "white": "Sketch_white.svg"
+    }
+  },
+  {
+    "symbol": "Skype",
+    "name": "Skype",
+    "category": "social",
+    "color": "#00AFF0",
+    "files": {
+      "color": "Skype.svg",
+      "black": "Skype_black.svg",
+      "white": "Skype_white.svg"
+    }
+  },
+  {
+    "symbol": "Slack",
+    "name": "Slack",
+    "category": "social",
+    "color": "#4A154B",
+    "files": {
+      "color": "Slack.svg",
+      "black": "Slack_black.svg",
+      "white": "Slack_white.svg"
+    }
+  },
+  {
+    "symbol": "Snapchat",
+    "name": "Snapchat",
+    "category": "social",
+    "color": "#FFFC00",
+    "files": {
+      "color": "Snapchat.svg",
+      "black": "Snapchat_black.svg",
+      "white": "Snapchat_white.svg"
+    }
+  },
+  {
+    "symbol": "Spotify",
+    "name": "Spotify",
+    "category": "social",
+    "color": "#1DB954",
+    "files": {
+      "color": "Spotify.svg",
+      "black": "Spotify_black.svg",
+      "white": "Spotify_white.svg"
+    }
+  },
+  {
+    "symbol": "Stackoverflow",
+    "name": "Stackoverflow",
+    "category": "social",
+    "color": "#F58025",
+    "files": {
+      "color": "Stackoverflow.svg",
+      "black": "Stackoverflow_black.svg",
+      "white": null
+    }
+  },
+  {
+    "symbol": "Steam",
+    "name": "Steam",
+    "category": "social",
+    "color": "#000000",
+    "files": {
+      "color": "Steam.svg",
+      "black": "Steam_black.svg",
+      "white": "Steam_white.svg"
+    }
+  },
+  {
+    "symbol": "Strava",
+    "name": "Strava",
+    "category": "social",
+    "color": "#FC4C02",
+    "files": {
+      "color": "Strava.svg",
+      "black": "Strava_black.svg",
+      "white": "Strava_white.svg"
+    }
+  },
+  {
+    "symbol": "StumbleUpon",
+    "name": "Stumble Upon",
+    "category": "social",
+    "color": "#EB4924",
+    "files": {
+      "color": "StumbleUpon.svg",
+      "black": "StumbleUpon_black.svg",
+      "white": "StumbleUpon_white.svg"
+    }
+  },
+  {
+    "symbol": "Taobao",
+    "name": "Taobao",
+    "category": "social",
+    "color": "#FF5000",
+    "files": {
+      "color": "Taobao.svg",
+      "black": "Taobao_black.svg",
+      "white": "Taobao_white.svg"
+    }
+  },
+  {
+    "symbol": "TeamViewer",
+    "name": "Team Viewer",
+    "category": "social",
+    "color": "#0E80E5",
+    "files": {
+      "color": "TeamViewer.svg",
+      "black": "TeamViewer_black.svg",
+      "white": "TeamViewer_white.svg"
+    }
+  },
+  {
+    "symbol": "Telegram",
+    "name": "Telegram",
+    "category": "social",
+    "color": "#24A1DE",
+    "files": {
+      "color": "Telegram.svg",
+      "black": "Telegram_black.svg",
+      "white": "Telegram_white.svg"
+    }
+  },
+  {
+    "symbol": "Tidal",
+    "name": "Tidal",
+    "category": "social",
+    "color": "#000000",
+    "files": {
+      "color": "Tidal.svg",
+      "black": "Tidal_black.svg",
+      "white": "Tidal_white.svg"
+    }
+  },
+  {
+    "symbol": "Tik Tok",
+    "name": "Tik Tok",
+    "category": "social",
+    "color": "#000000",
+    "files": {
+      "color": "Tik Tok.svg",
+      "black": "Tik Tok_black.svg",
+      "white": "Tik Tok_white.svg"
+    }
+  },
+  {
+    "symbol": "Tilda",
+    "name": "Tilda",
+    "category": "social",
+    "color": "#000000",
+    "files": {
+      "color": "Tilda.svg",
+      "black": "Tilda_black.svg",
+      "white": "Tilda_white.svg"
+    }
+  },
+  {
+    "symbol": "Tinder",
+    "name": "Tinder",
+    "category": "social",
+    "color": "#FE3D71",
+    "files": {
+      "color": "Tinder.svg",
+      "black": "Tinder_black.svg",
+      "white": "Tinder_white.svg"
+    }
+  },
+  {
+    "symbol": "Tor",
+    "name": "Tor",
+    "category": "social",
+    "color": "#7D4698",
+    "files": {
+      "color": "Tor.svg",
+      "black": "Tor_black.svg",
+      "white": "Tor_white.svg"
+    }
+  },
+  {
+    "symbol": "Treehouse",
+    "name": "Treehouse",
+    "category": "social",
+    "color": "#56B68B",
+    "files": {
+      "color": "Treehouse.svg",
+      "black": "Treehouse_black.svg",
+      "white": "Treehouse_white.svg"
+    }
+  },
+  {
+    "symbol": "Trello",
+    "name": "Trello",
+    "category": "social",
+    "color": "#0052CC",
+    "files": {
+      "color": "Trello.svg",
+      "black": "Trello_black.svg",
+      "white": "Trello_white.svg"
+    }
+  },
+  {
+    "symbol": "Tripadvisor",
+    "name": "Tripadvisor",
+    "category": "social",
+    "color": "#34E0A1",
+    "files": {
+      "color": "Tripadvisor.svg",
+      "black": "Tripadvisor_black.svg",
+      "white": "Tripadvisor_white.svg"
+    }
+  },
+  {
+    "symbol": "Tumblr",
+    "name": "Tumblr",
+    "category": "social",
+    "color": "#36465D",
+    "files": {
+      "color": "Tumblr.svg",
+      "black": "Tumblr_black.svg",
+      "white": "Tumblr_white.svg"
+    }
+  },
+  {
+    "symbol": "Twitch",
+    "name": "Twitch",
+    "category": "social",
+    "color": "#9146FF",
+    "files": {
+      "color": "Twitch.svg",
+      "black": "Twitch_black.svg",
+      "white": "Twitch_white.svg"
+    }
+  },
+  {
+    "symbol": "Twitter",
+    "name": "Twitter",
+    "category": "social",
+    "color": "#1DA1F2",
+    "files": {
+      "color": "Twitter.svg",
+      "black": "Twitter_black.svg",
+      "white": "Twitter_white.svg"
+    }
+  },
+  {
+    "symbol": "Ubuntu",
+    "name": "Ubuntu",
+    "category": "social",
+    "color": "#E95420",
+    "files": {
+      "color": "Ubuntu.svg",
+      "black": "Ubuntu_black.svg",
+      "white": "Ubuntu_white.svg"
+    }
+  },
+  {
+    "symbol": "Uplabs",
+    "name": "Uplabs",
+    "category": "social",
+    "color": "#1E88E5",
+    "files": {
+      "color": "Uplabs.svg",
+      "black": "Uplabs_black.svg",
+      "white": "Uplabs_white.svg"
+    }
+  },
+  {
+    "symbol": "Utorrent",
+    "name": "Utorrent",
+    "category": "social",
+    "color": "#009900",
+    "files": {
+      "color": "Utorrent.svg",
+      "black": "Utorrent_black.svg",
+      "white": "Utorrent_white.svg"
+    }
+  },
+  {
+    "symbol": "VK",
+    "name": "VK",
+    "category": "social",
+    "color": "#4680C2",
+    "files": {
+      "color": "VK.svg",
+      "black": "VK_black.svg",
+      "white": "VK_white.svg"
+    }
+  },
+  {
+    "symbol": "Viadeo",
+    "name": "Viadeo",
+    "category": "social",
+    "color": "#F07355",
+    "files": {
+      "color": "Viadeo.svg",
+      "black": "Viadeo_black.svg",
+      "white": "Viadeo_white.svg"
+    }
+  },
+  {
+    "symbol": "Viber",
+    "name": "Viber",
+    "category": "social",
+    "color": "#7360F2",
+    "files": {
+      "color": "Viber.svg",
+      "black": "Viber_black.svg",
+      "white": "Viber_white.svg"
+    }
+  },
+  {
+    "symbol": "Vimeo",
+    "name": "Vimeo",
+    "category": "social",
+    "color": "#1AB7EA",
+    "files": {
+      "color": "Vimeo.svg",
+      "black": "Vimeo_black.svg",
+      "white": "Vimeo_white.svg"
+    }
+  },
+  {
+    "symbol": "Vine",
+    "name": "Vine",
+    "category": "social",
+    "color": "#00B488",
+    "files": {
+      "color": "Vine.svg",
+      "black": "Vine_black.svg",
+      "white": "Vine_white.svg"
+    }
+  },
+  {
+    "symbol": "Visa",
+    "name": "Visa",
+    "category": "social",
+    "color": "#1A1F71",
+    "files": {
+      "color": "Visa.svg",
+      "black": "Visa_black.svg",
+      "white": "Visa_white.svg"
+    }
+  },
+  {
+    "symbol": "WWW",
+    "name": "WWW",
+    "category": "social",
+    "color": "#4A90E2",
+    "files": {
+      "color": "WWW.svg",
+      "black": "WWW_black.svg",
+      "white": null
+    }
+  },
+  {
+    "symbol": "Wechat",
+    "name": "Wechat",
+    "category": "social",
+    "color": "#07C160",
+    "files": {
+      "color": "Wechat.svg",
+      "black": "Wechat_black.svg",
+      "white": "Wechat_white.svg"
+    }
+  },
+  {
+    "symbol": "Weibo",
+    "name": "Weibo",
+    "category": "social",
+    "color": "#DF2029",
+    "files": {
+      "color": "Weibo.svg",
+      "black": "Weibo_black.svg",
+      "white": "Weibo_white.svg"
+    }
+  },
+  {
+    "symbol": "WhatsApp",
+    "name": "Whats App",
+    "category": "social",
+    "color": "#25D366",
+    "files": {
+      "color": "WhatsApp.svg",
+      "black": "WhatsApp_black.svg",
+      "white": "WhatsApp_white.svg"
+    }
+  },
+  {
+    "symbol": "Windows",
+    "name": "Windows",
+    "category": "social",
+    "color": "#0078D6",
+    "files": {
+      "color": "Windows.svg",
+      "black": "Windows_black.svg",
+      "white": "Windows_white.svg"
+    }
+  },
+  {
+    "symbol": "Wordpress",
+    "name": "Wordpress",
+    "category": "social",
+    "color": "#21759B",
+    "files": {
+      "color": "Wordpress.svg",
+      "black": "Wordpress_black.svg",
+      "white": "Wordpress_white.svg"
+    }
+  },
+  {
+    "symbol": "Xbox",
+    "name": "Xbox",
+    "category": "social",
+    "color": "#107C10",
+    "files": {
+      "color": "Xbox.svg",
+      "black": "Xbox_black.svg",
+      "white": "Xbox_white.svg"
+    }
+  },
+  {
+    "symbol": "YandexBrowser",
+    "name": "Yandex Browser",
+    "category": "social",
+    "color": "#FF0000",
+    "files": {
+      "color": "YandexBrowser.svg",
+      "black": "YandexBrowser_black.svg",
+      "white": "YandexBrowser_white.svg"
+    }
+  },
+  {
+    "symbol": "Yelp",
+    "name": "Yelp",
+    "category": "social",
+    "color": "#D32323",
+    "files": {
+      "color": "Yelp.svg",
+      "black": "Yelp_black.svg",
+      "white": "Yelp_white.svg"
+    }
+  },
+  {
+    "symbol": "Youtube",
+    "name": "Youtube",
+    "category": "social",
+    "color": "#FF0000",
+    "files": {
+      "color": "Youtube.svg",
+      "black": "Youtube_black.svg",
+      "white": "Youtube_white.svg"
+    }
+  },
+  {
+    "symbol": "Zendesk",
+    "name": "Zendesk",
+    "category": "social",
+    "color": "#03363D",
+    "files": {
+      "color": "Zendesk.svg",
+      "black": "Zendesk_black.svg",
+      "white": "Zendesk_white.svg"
+    }
+  },
+  {
+    "symbol": "Zerpply",
+    "name": "Zerpply",
+    "category": "social",
+    "color": "#A2A2A2",
+    "files": {
+      "color": "Zerpply.svg",
+      "black": "Zerpply_black.svg",
+      "white": "Zerpply_white.svg"
+    }
+  },
+  {
+    "symbol": "Zoom",
+    "name": "Zoom",
+    "category": "social",
+    "color": "#2D8CFF",
+    "files": {
+      "color": "Zoom.svg",
+      "black": "Zoom_black.svg",
+      "white": "Zoom_white.svg"
+    }
+  },
+  {
+    "symbol": "ui8",
+    "name": "UI8",
+    "category": "social",
+    "color": "#3B82F6",
+    "files": {
+      "color": "ui8.svg",
+      "black": "ui8_black.svg",
+      "white": "ui8_white.svg"
+    }
+  }
+]
